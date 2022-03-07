@@ -16,14 +16,16 @@ First, I took a look at the impact that launch date has on a Kickstarter campaig
 
 We can then easily chart the results to see what time of the year is most effective to launch a Kickstarter campaign to fund a play.
 
-![Launch Time](Resources/Theater_Outcomes_vs_Launch.PNG)
+![Launch Time](Resources/Theater_Outcomes_vs_Launch.png)
 
 ### Analysis of Outcomes Based on Goals
 Another way to slice the data is to take a closer look at the dollar amounts of the fundraising goals themselves. To do this, splitting the goals into buckets based on their dollar targets allows us to see what can realistically be funded by appealing to Kickstarter backers. I set up the groupings like so:
-PIC
+
+![Goals](Resources/Goal_Buckets.PNG)
+
 This allows us to see if a lower dollar target equates to a higher successful Kickstarter rate, but unfortunately the syntax of “1000 to 4999” doesn’t help us to work with formulas. To avoid this problem, I’ve created a “Min Range” and “Max Range” column that numerically shows the bottom and top end of each bucket, so they can be used in formulas. Splitting those values into cells and removing the text allows for a formula like so:
 `=COUNTIFS(Kickstarter!F:F,"=Successful",Kickstarter!R:R,"=plays",Kickstarter!D:D,">="&'Outcomes Based on Goals'!B2,Kickstarter!D:D,"<="&'Outcomes Based on Goals'!C2)` 
-Where column B has the minimum value, column C has the maximum value, and then “=Successful” can be substituted out for failed and canceled to find the total count of each completion condition.
+Where column B has the minimum value, column C has the maximum value, and then “=Successful” can be substituted out for failed and canceled to find the total count of each completion condition. Column B and C can then be hidden and are only needed for the formula's functionality.
 
 ## Results
 #### What are two conclusions you can draw about the Outcomes based on Launch Date?
