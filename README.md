@@ -18,7 +18,7 @@ We can then easily chart the results to see what time of the year is most effect
 Another way to slice the data is to take a closer look at the dollar amounts of the fundraising goals themselves. To do this, splitting the goals into buckets based on their dollar targets allows us to see what can realistically be funded by appealing to Kickstarter backers. I set up the groupings like so:
 PIC
 This allows us to see if a lower dollar target equates to a higher successful Kickstarter rate, but unfortunately the syntax of “1000 to 4999” doesn’t help us to work with formulas. To avoid this problem, I’ve created a “Min Range” and “Max Range” column that numerically shows the bottom and top end of each bucket, so they can be used in formulas. Splitting those values into cells and removing the text allows for a formula like so:
-‘=COUNTIFS(Kickstarter!F:F,"=Successful",Kickstarter!R:R,"=plays",Kickstarter!D:D,">="&'Outcomes Based on Goals'!B2,Kickstarter!D:D,"<="&'Outcomes Based on Goals'!C2)’ 
+`=COUNTIFS(Kickstarter!F:F,"=Successful",Kickstarter!R:R,"=plays",Kickstarter!D:D,">="&'Outcomes Based on Goals'!B2,Kickstarter!D:D,"<="&'Outcomes Based on Goals'!C2)` 
 Where column B has the minimum value, column C has the maximum value, and then “=Successful” can be substituted out for failed and canceled to find the total count of each completion condition.
 
 ## Results
