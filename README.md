@@ -9,7 +9,7 @@ The aim of this project was to help Louise gain a better understanding of what l
 ## Analysis and Challenges
 
 ### Analysis of Outcomes Based on Launch Date
-First, I took a look at the impact that launch date has on a Kickstarter campaign. The first challenge was getting a date that is easily understood at a glance. The initial dataset used a Unix timestamp for the deadline and date launched information, which is not ideal for a visualization. By using the formula ‘=(((J522/60)/60)/24)+DATE(1970,1,1)’ where J522 refers to our Unix date, we divide by seconds, minutes, and hours, and add the Unix start date of Jan 1st 1970 to get the date-time in a human-readable format. From here, using the ‘=YEARS()’ formula, we can extract just the year to aid in our pivot analysis.
+First, I took a look at the impact that launch date has on a Kickstarter campaign. The first challenge was getting a date that is easily understood at a glance. The initial dataset used a Unix timestamp for the deadline and date launched information, which is not ideal for a visualization. By using the formula `=(((J522/60)/60)/24)+DATE(1970,1,1)` where J522 refers to our Unix date, we divide by seconds, minutes, and hours, and add the Unix start date of Jan 1st 1970 to get the date-time in a human-readable format. From here, using the `=YEARS()` formula, we can extract just the year to aid in our pivot analysis.
 	Now that we have the data in a more user-friendly format, creating a pivot is a good way to see what time of year is ideal for a theater project. Setting up the pivot like so:
 PIC
 We can then easily chart the results to see what time of the year is most effective to launch a Kickstarter campaign to fund a play.
